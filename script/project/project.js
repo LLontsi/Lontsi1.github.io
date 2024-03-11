@@ -30,7 +30,7 @@ var dataJson = [
         "url":"https://github.com/sohez/smart-vichar"
     }
 ];
-
+/**/ 
 var raw_html = "";
 dataJson.forEach(function(item){
     raw_html += `<div

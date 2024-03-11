@@ -1,9 +1,9 @@
 var dataJson = [
     {
-        "name": "WEB DEVELOPMENT",
+        "name": "Developpement WEB",
         "width": "70%"
     }, {
-        "name": "ANDROID DEVELOPMENT",
+        "name": "Developpement ANDROID ",
         "width": "35%"
     }, {
         "name": "R/shyni",

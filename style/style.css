@@ -1,0 +1,363 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"); */
+
+:root {
+  /*
+  dark mode colours
+   --bg: #121212; 
+  --bg-sec:#222222;
+  --txt-color: #efeaea; */
+  
+  --bg: #fff;
+  --bg-sec:#ececec;
+  --txt-color: rgb(0, 0, 0);
+
+  --white: #efeaea;
+  --maincolor: #4388fe;
+  --color1: #fe8443;
+
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--maincolor);
+  background-color: var(--white);
+}
+
+::selection {
+  color: var(--maincolor);
+  background-color: var(--white);
+}
+
+body {
+  background-color: var(--bg);
+  font-family: "Josefin Sans", Arial;
+  color: var(--txt-color);
+  overflow: scroll;
+  background-image: url('../res/bg.svg');
+  background-repeat: no-repeat;
+}
+
+#submit{
+  border: 1px solid var(--color1);
+  color: var(--color1);
+}
+#submit:hover{
+  background-color: var(--color1);
+  color: white;
+}
+.txt-color{
+  color: var(--txt-color);
+}
+
+.maincolor {
+  /* Theme color */
+  color: var(--maincolor);
+  transition: 1.5s;
+}
+
+.input-bg{
+  background-color: var(--bg-sec);
+  color: var(--txt-color);
+}
+input:focus,textarea:focus{
+  background-color: var(--bg-sec) !important;
+  color: var(--txt-color) !important;
+}
+header {
+  margin: 0;
+  min-height: 100%;
+}
+
+.white {
+  /* Font color */
+  color: white;
+}
+
+.p1 {
+  /* process Bar */
+  background-color: var(--color1);
+  color: white;
+  text-align: right;
+  padding-right: 10px;
+  transition: 1.5s;
+}
+
+/* for menu select */
+.hover {
+  display: inline-block;
+  position: relative;
+  color: var(--color1);
+  transition: 1.5s;
+  cursor: pointer;
+}
+.hover:after {
+  text-decoration: underline;
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--maincolor);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+span a {
+  text-decoration: none;
+  all: unset;
+}
+span a:hover {
+  all: unset;
+}
+span {
+  /* font-size: 32px; */
+  font-size: 2em;
+}
+/* Menu close */
+
+.logo {
+  width: 100%;
+  height: 90%;
+  border-radius: 20%;
+  object-fit: cover;
+  object-position: 25% 25%;
+
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.logo:hover{
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+/* style for social midia icons */
+.svg-icon{
+margin: 4px;
+}
+.svg-icon:hover {
+  opacity: 0.5;
+}
+a:hover{
+  opacity: 0.5;
+  color: var(--maincolor);
+}
+ul {
+  list-style-type: none;
+}
+ul li {
+  float: left;
+}
+ul li a {
+  all: unset;
+}
+ul li a i {
+  font-size: 1.3rem;
+  margin-right: 15px;
+  cursor: pointer;
+}
+ul li a i:hover {
+  color: var(--color1);
+  opacity: 0.5;
+}
+
+/* style for color picker card */
+.crd {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  background-color: var(--bg-sec);
+  padding: 8px;
+  width: 170px;
+  /* height: fit-content; */
+  color: white;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  border: 1px solid var(--maincolor);
+  border-radius: 5px;
+}
+
+/* style for gear button */
+.bbt {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  background-color: var(--maincolor);
+  transition: 1.5s;
+  /* border: 1px solid var(--maincolor); */
+  width: 50px;
+  height: 50px;
+  color: white;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  -webkit-animation: spin 2s linear infinite; /* roted btn */
+  animation: spin 2s linear infinite; /* animate btn */
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 15px; */
+}
+
+#color-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #0096FF ;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #151414;
+  cursor: pointer;
+}
+#color-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #fe4365;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #151414;
+  cursor: pointer;
+}
+#color-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #e39801;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #151414;
+  cursor: pointer;
+}
+#color-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #37af49;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #151414;
+  cursor: pointer;
+}
+
+/* Animating the gear button rored */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* animation close */
+/* card project */
+.project {
+  padding: 8px;
+  height: auto;
+  width: 100%;
+  background-color: var(--bg-sec);
+}
+.project:hover {
+  transition: 1.5s;
+  outline: var(--maincolor) solid 1px;
+}
+/*Typing ......... */
+
+.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 4px;
+  height: 3rem;
+  animation: blink 0.8s infinite;
+}
+.co-type p span .cursor .typing {
+  animation: none;
+}
+@keyframes blink {
+  0% {
+    background-color: #ccc;
+  }
+  49% {
+    background-color: #ccc;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
+
+.top-progress-container {
+  width: 100%;
+  height: 4px;
+  position: fixed;
+  top: 0;
+}
+
+.top-progress-bar {
+  height: 4px;
+  background: var(--maincolor);
+  width: 0%;
+}
+
+@media only screen and (max-width: 400px) {
+  .a-tag{
+    font-size: 0.8rem;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+}
+
+/* custom css */
+.big-title{
+  font-size: 4rem;
+}
+.typed-text{
+  font-size: 1.2em;
+}
+.img-co{
+  height: 300px; width: 300px;
+}
+
+#Email{
+  border: 0; 
+  box-shadow: none
+}
+#Message{
+  border: 0; 
+  box-shadow: none;
+}
+#checker{
+  font-size: 1rem;
+}
+
+#toggle-card{
+  transition: height .10s ease;
+  overflow: hidden;
+}
+#toggle-card:not(.active) {
+  display: none;
+}

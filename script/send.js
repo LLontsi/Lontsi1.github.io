@@ -7,54 +7,62 @@ function setresText(res) {
 form.addEventListener("submit", function (e) {
     e.preventDefault();
     setresText("Sending msg..");
-    var msg = sendMessage();
+    sendMessage();
 });
 
 function isValid(email) {
-    //check email is formated
+    // Vérifiez si l'e-mail est bien formaté
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     return emailReg.test(email);
 }
+
 function sendMessage() {
     var email = document.getElementById("Email").value;
     var message = document.getElementById("Message").value;
+    
     if (email == "" || message == "") {
         setresText("Email or Message Empty!");
-        return false;
+        return;
     }
+    
     if (!isValid(email)) {
         setresText("Wrong Email");
-        return false;
+        return;
     }
 
-    var data = new FormData();
-    data.set('Name','@PORTFOLLIO')
-    data.set('Email', email);
-    data.set('Request', message);
+    var subject = "Nouveau message du formulaire";
+    var body = "E-mail: " + email + "\n" +
+               "Message: " + message;
 
+    // Utilisez une requête AJAX pour envoyer l'e-mail
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://script.google.com/macros/s/AKfycbxYY_V_9s3-YOdxjF_-myK4dFShKsmMZLb1331vh2fGkgFL7voYUTNoSpeduoVHlYnXfg/exec', true);
+    xhr.open("POST", "https://lontsilambou@gmail.com", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
 
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState === 4){
-        setresText("Message Sended !");
-        setTimeout(function () {
-         formreset();
-     }, 2000);
-    }
-    }
-    xhr.onerror = function(){
-        setresText("Somthing Error !");
-    }
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            setresText("Message Sent!");
+            formreset();
+        } else {
+            setresText("Something went wrong!");
+        }
+    };
+
+    xhr.onerror = function () {
+        setresText("Something went wrong!");
+    };
+
+    var data = JSON.stringify({
+        email: email,
+        subject: subject,
+        body: body
+    });
+
     xhr.send(data);
-
-    return true;
 }
 
 function formreset() {
-    //for empty all values
     setresText("");
     document.getElementById("Email").value = "";
     document.getElementById("Message").value = "";
 }
-

@@ -33,7 +33,7 @@ function sendMessage() {
     data.set('Request', message);
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://script.google.com/a/macros/facsciences-uy1.cm/s/AKfycbxYY_V_9s3-YOdxjF_-myK4dFShKsmMZLb1331vh2fGkgFL7voYUTNoSpeduoVHlYnXfg/exec', true);
+    xhr.open('POST', 'https://script.google.com/macros/s/AKfycbxYY_V_9s3-YOdxjF_-myK4dFShKsmMZLb1331vh2fGkgFL7voYUTNoSpeduoVHlYnXfg/exec', true);
 
     xhr.onreadystatechange = function(){
         if(xhr.readyState === 4){

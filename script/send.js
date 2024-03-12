@@ -30,35 +30,24 @@ function sendMessage() {
         return;
     }
 
-    var subject = "Nouveau message du formulaire";
-    var body = "E-mail: " + email + "\n" +
-               "Message: " + message;
-
-    // Utilisez une requête AJAX pour envoyer l'e-mail
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://lontsilambou@gmail.com", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.onload = function () {
-        if (xhr.status === 200) {
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "lontsilambou",
+        Password: "Lo12n@tsi",
+        To: "lontsilambou@gmail.com",
+        From: email,
+        Subject: "Nouveau message du formulaire",
+        Body: "E-mail: " + email + "<br>Message: " + message
+    }).then(
+        function (message) {
             setresText("Message Sent!");
             formreset();
-        } else {
+        }
+    ).catch(
+        function (error) {
             setresText("Something went wrong!");
         }
-    };
-
-    xhr.onerror = function () {
-        setresText("Something went wrong!");
-    };
-
-    var data = JSON.stringify({
-        email: email,
-        subject: subject,
-        body: body
-    });
-
-    xhr.send(data);
+    );
 }
 
 function formreset() {

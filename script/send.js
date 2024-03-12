@@ -33,7 +33,7 @@ function sendMessage() {
     data.set('Request', message);
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://docs.google.com/spreadsheets/d/1jqJTaOuE8e4zEBg2gByIHwm5Ua24jV7A1IvbESlDvJ4/edit?usp=drive_link', true);
+    xhr.open('POST', 'https://script.google.com/u/0/home/projects/11cD8WPSwkWehzVdhpCy7k94pHJWVMsJBUE3RaYrClFRTBt8KzaxO6V9b/edit', true);
 
     xhr.onreadystatechange = function(){
         if(xhr.readyState === 4){

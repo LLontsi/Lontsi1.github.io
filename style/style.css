@@ -361,3 +361,36 @@ ul li a i:hover {
 #toggle-card:not(.active) {
   display: none;
 }
+/* Style pour le formulaire */
+#contactForm {
+    background-color: #f8f9fa; /* Couleur de fond */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Style pour les champs du formulaire */
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da; /* Bordure */
+    border-radius: 5px;
+}
+
+/* Style pour le bouton d'envoi */
+#contactForm button[type="submit"] {
+    background-color: #e39801; /* Couleur de fond orange */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition fluide */
+}
+
+/* Style pour le bouton d'envoi au survol */
+#contactForm button[type="submit"]:hover {
+    background-color: #e39801; /* Couleur de fond orange clair au survol */
+}

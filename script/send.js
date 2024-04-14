@@ -1,4 +1,4 @@
-var form = document.getElementById("formid");
+/*var form = document.getElementById("formid");
 
 function setresText(res) {
     document.getElementById("checker").innerText = res;
@@ -33,7 +33,7 @@ function sendMessage() {
     data.set('Request', message);
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://script.google.com/macros/s/AKfycbzvN7M_torncXLPNryXx7RkSexFRhzTkwFE2Ar5FIhui518PCRhM9XpgWC6-IYasWrhpg/exec', true);
+    xhr.open('POST', 'https://script.google.com/macros/s/AKfycbzhHILUidNLArouT668ZPOouaQ_O1wntyP3_Fb4DJ6t2JpR2G9r4nYpGD7BV5OA1m9bAw/exec', true);
 
     xhr.onreadystatechange = function(){
         if(xhr.readyState === 4){
@@ -57,4 +57,20 @@ function formreset() {
     document.getElementById("Email").value = "";
     document.getElementById("Message").value = "";
 }
+*/
+function kill_space(){
+    if(window.innerWidth <= 768)
+    {
+        document.getElementById('espace').classList.remove('icon_3');
+        document.getElementById('espace').classList.add('icon_1');
+    }
+    else
+    {
+        document.getElementById('espace').classList.remove('icon_1');
+        document.getElementById('espace').classList.add('icon_3');
+    }
+}
 
+kill_space()
+
+window.addEventListener('resize', kill_space);

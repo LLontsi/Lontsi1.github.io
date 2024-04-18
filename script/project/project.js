@@ -1,6 +1,6 @@
 var dataJson = [
     {
-        "img": "l.png",
+        "img": "https://github.com/LLontsi/gestion_agence_et_reservation/blob/main/reservation/static/l.png",
         "title": "gestion d'agence et reservation",
         "paragraph":"gere les agence de voyage et faire des reservation en ligne.",
         "url":"https://github.com/LLontsi/gestion_agence_et_reservation"
